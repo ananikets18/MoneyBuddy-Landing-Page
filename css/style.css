@@ -1,0 +1,418 @@
+:root {
+  /* ===== HEADER-HEIGHT ===== */
+  --height-header: 5rem;
+
+  /* ==== Colors ==== */
+  --primary-color: hsl(39, 100%, 95%);
+  --secondary-color: hsl(44, 12%, 36%);
+  --neutral-color-light: hsl(255, 100%, 85%);
+  --neutral-color: hsl(254, 68%, 70%);
+  --dark-color: hsl(229, 20%, 17%);
+  --darkest-color: hsl(255, 51%, 29%);
+
+  /* ===== Font-Family ====== */
+  --bold-Font: Sporting Grotesque;
+  --regular-Font: SF UI Display;
+
+  /* ===== FONT-WEIGHT ===== */
+  --fw-bold: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+
+  /* ===== FONT-SIZE ===== */
+  --fz-small: 0.88rem;
+  --fz-regular: 0.9rem;
+  --fz-medium: 1rem;
+  --fz-large: 1.25rem;
+  --fz-xl: 1.5rem;
+
+  /* ====== OPACITY ====== */
+  --opacity-large: 1;
+  --opacity-less: 0;
+  --opacity-partial: 0.55;
+
+  /* ===== UTILITIES ===== */
+  --text-capital: capitalize;
+  --box-shadow: 5px 5px var(--darkest-color);
+}
+@media screen and (min-width: 991px) {
+  :root {
+    /* ===== FONT-SIZE ===== */
+    --fz-regular: 1rem;
+    --fz-medium: 1.125rem;
+    --fz-large: 1.5rem;
+    --fz-xl: 3rem;
+  }
+}
+
+/* ===== ROOT RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ===== HTML RESET ===== */
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+body {
+  background: linear-gradient(to right, #fbe9bb, #ece5ff);
+}
+
+/* ===== 'stop_scroll' CLASS ADDED ON BODY TO PREVENT SCROLLING OF THE PAGE WHEN THE NAV MENU IS ACTIVE.  ===== */
+.stop_scroll {
+  overflow-y: hidden;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* ===== HEADER ===== */
+.header {
+  height: var(--height-header);
+}
+/* ===== NAVBAR ===== */
+.navbar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* ===== LOGO ===== */
+.logo {
+  font-family: var(--bold-Font);
+  font-size: var(--fz-large);
+  color: var(--dark-color);
+  font-weight: var(--fw-bold);
+}
+/* ===== NAV-MENU-LIST ===== */
+.nav_menu_list {
+  display: flex;
+  column-gap: 2rem;
+}
+/* ===== NAV-MENU-LIST-ITEM ===== */
+.nav_menu_list_item {
+  display: inline-block;
+  font-family: var(--regular-Font);
+  text-transform: var(--text-capital);
+}
+/* ===== NAV-LINK ===== */
+.nav_link {
+  color: var(--dark-color);
+  opacity: 0.8;
+  font-weight: var(--fw-medium);
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-size: var(--fz-medium);
+}
+.nav_link:hover {
+  opacity: var(--opacity-large);
+}
+.nav_link:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  border-bottom: 2px solid var(--darkest-color);
+}
+/* ===== LOGIN-BUTTON ===== */
+.login_btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #c5b1ff;
+  font-size: var(--fz-medium);
+  color: var(--darkest-color);
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.4s ease, transform 0.4s;
+}
+.login_btn:hover {
+  box-shadow: var(--box-shadow);
+  transform: scale(1.05);
+}
+/* ===== ION-ICON GLOBAL STYLE ===== */
+ion-icon {
+  font-size: 24px;
+}
+/* ===== RESPONSIVE NAV MENU ===== */
+@media screen and (max-width: 991px) {
+  /* ===== NAV-MENU ===== */
+  .nav_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: var(--opacity-less);
+    background-color: hsla(0, 0%, 98%, 0.356);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    transition: 0.4s ease;
+  }
+  .toggle_nav_btn,
+  .close_menu_btn {
+    display: block;
+  }
+  .close_menu_btn .icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.85rem;
+  }
+  .nav_menu_list {
+    height: 100%;
+    flex-direction: column;
+    row-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav_link {
+    font-size: 1.45rem;
+  }
+}
+/* ===== SHOW NAV MENU ===== */
+.show {
+  opacity: var(--opacity-large);
+  visibility: visible;
+}
+/* ===== HERO ===== */
+.hero {
+  margin-top: 3.5rem;
+}
+.hero__description {
+  text-align: center;
+  position: relative;
+}
+.hero__title {
+  font-size: var(--fz-xl);
+  font-family: var(--bold-Font);
+  color: var(--dark-color);
+}
+.hero__subtitle {
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: var(--fz-medium);
+  font-family: var(--regular-Font);
+  color: var(--secondary-color);
+  font-weight: var(--fw-regular);
+  line-height: 1.75;
+}
+.hero__subtitle strong {
+  color: var(--darkest-color);
+}
+/* ====== FLOATING ICONS ====== */
+.floating_icons {
+  position: absolute;
+  font-size: 1.75rem;
+}
+.icon-1 {
+  left: 0;
+  top: 20%;
+  transform: 0;
+}
+.icon-2 {
+  right: 0;
+  top: 30%;
+  transform: 0;
+}
+/* ===== HERO CALL TO ACTION WRAPPER ===== */
+.hero__cta_wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/* ===== FEATURED STUDENTS ===== */
+.featured_students {
+  position: relative;
+}
+
+/* ===== STUDENTS ===== */
+.student {
+  min-height: 250px;
+  border-radius: 2rem 2rem 0 0;
+  filter: drop-shadow(0px 0px 14px hsla(240, 69%, 57%, 0.356));
+}
+.student.student_1 {
+  background: url("../images/boy-pointing-upwards.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ===== VECTOR SVG ===== */
+
+.vector_svg {
+  position: absolute;
+}
+.vector--svg-1 {
+  top: -1rem;
+  left: -1rem;
+}
+.vector--svg-2 {
+  left: -1.2rem;
+  top: -1rem;
+  transform: rotate(-90deg);
+}
+/* ===== HERO ===== */
+.hero_cta {
+  text-align: center;
+  line-height: 2;
+}
+.hero_email {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+/* ===== EMAIL-INPUT ===== */
+.emailInp {
+  width: 100%;
+  padding: 0.85rem;
+  outline: none;
+  border: none;
+  position: relative;
+  font-size: 1.15rem;
+  border: 1px solid #a19a87;
+}
+/* ===== JOIN US BUTTON ===== */
+.join_us_btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1rem 1rem;
+  background-color: var(--neutral-color-light);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: var(--fw-bold);
+  font-family: var(--regular-Font);
+  text-transform: var(--text-capital);
+}
+.join_us_btn:hover {
+  background-color: var(--neutral-color);
+}
+/* ===== BRANDS ===== */
+.brands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.brand_logo {
+  max-width: 4.5rem;
+  height: 4.5rem;
+  filter: grayscale(100%);
+  opacity: var(--opacity-partial);
+}
+.backed_text {
+  font-family: var(--regular-Font);
+  letter-spacing: 1px;
+  font-size: var(--fz-medium);
+  color: var(--secondary-color);
+  text-transform: var(--text-capital);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.25rem;
+}
+.student.student_2 {
+  background: url("../images/yellow-hoddie-girl-showing-direc.jpg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 0px 14px hsla(64, 84%, 52%, 0.658));
+}
+/* ===== STATS-WRAPPER ===== */
+.stats_wrapper {
+  background: linear-gradient(to right, #fae2a3, #c2adff);
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+/* ===== GRID ===== */
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== STATS ===== */
+.stats {
+  padding: 1rem 2em;
+  background-color: var(--primary-color);
+  border: 1px solid hsla(44, 12%, 58%, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.stats h3 {
+  font-size: var(--fz-large);
+  font-family: var(--bold-Font);
+  color: var(--dark-color);
+}
+.stats p {
+  font-family: var(--regular-Font);
+  text-transform: var(--text-capital);
+  color: var(--secondary-color);
+  font-size: var(--fz-small);
+}
+/* ===== RESPONSIVE MEDIA QUERY ===== */
+@media screen and (min-width: 61.93em) {
+  .toggle_nav_btn,
+  .close_menu_btn {
+    display: none;
+  }
+  .hero {
+    margin-top: 7rem;
+  }
+  .hero__subtitle {
+    max-width: 55%;
+  }
+  .hero__cta_wrapper {
+    grid-template-columns: 0.45fr 1fr 0.45fr;
+  }
+}
+
+@media screen and (min-width: 78.5em) {
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoneyBuddy - A Resposive landing Page</title>
+
+    <!-- ===== STYLE.CSS ===== -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- ===== IONICONS CDN ===== -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header container">
+      <!-- ===== NAVBAR ===== -->
+      <nav class="navbar">
+        <!-- ===== LOGO ===== -->
+        <a href="#" class="logo">MoneyBuddy</a>
+
+        <!-- ===== NAV-MENU ===== -->
+        <div class="nav_menu">
+          <!-- ===== CLOSE-MENU-BUTTON ===== -->
+          <button class="close_menu_btn">
+            <ion-icon name="close-outline" class="icon"></ion-icon>
+          </button>
+          <!-- ===== NAV-MENU-LIST ===== -->
+          <ul class="nav_menu_list">
+            <li class="nav_menu_list_item">
+              <a href="#" class="nav_link">courses </a>
+            </li>
+            <li class="nav_menu_list_item">
+              <a href="#" class="nav_link">success stories </a>
+            </li>
+            <li class="nav_menu_list_item">
+              <a href="#" class="nav_link">community </a>
+            </li>
+            <li class="nav_menu_list_item">
+              <a href="#" class="nav_link">about us </a>
+            </li>
+            <li class="nav_menu_list_item">
+              <a href="#" class="login_btn btn">login </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ===== TOGGLE-NAV-BUTTON ===== -->
+        <button class="toggle_nav_btn">
+          <ion-icon name="grid-outline"></ion-icon>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <main class="container hero">
+      <!-- ===== HERO-DESCRIPTION ===== -->
+      <div class="hero__description">
+        <!-- ===== TITLE ===== -->
+        <h1 class="hero__title">Make money as a student</h1>
+        <!-- ===== SUB-TITLE ===== -->
+        <p class="hero__subtitle">
+          We helped <strong>2,000+ students</strong> to make more than
+          <strong>50k per month</strong> as a student. Sounds Crazy? Join us
+          today 👇
+        </p>
+        <!-- ====== FLOATING ICONS ====== -->
+        <span class="floating_icons icon-1">💸</span>
+        <span class="floating_icons icon-2">💰</span>
+      </div>
+
+      <br /><br />
+
+      <!-- ===== HERO CALL TO ACTION WRAPPER ===== -->
+      <div class="hero__cta_wrapper">
+        <!-- ===== FEATURED STUDENTS ===== -->
+        <div class="featured_students">
+          <div class="student student_1"></div>
+          <img
+            src="./images/purple-curve-line.svg"
+            class="vector_svg vector--svg-1"
+            alt="Vector"
+          />
+        </div>
+
+        <!-- ===== HERO-CTA ===== -->
+        <div class="hero_cta">
+          <div class="hero_email">
+            <input
+              type="text"
+              class="emailInp"
+              placeholder="Your Email Address"
+            />
+            <button class="join_us_btn">join us now</button>
+          </div>
+          <!-- ===== BRANDS ===== -->
+          <div class="brands">
+            <img src="./images/logo-1.svg" class="brand_logo" alt="logo-1" />
+            <img src="./images/logo-2.svg" class="brand_logo" alt="logo-1" />
+            <img src="./images/logo-3.svg" class="brand_logo" alt="logo-1" />
+            <img src="./images/logo-4.svg" class="brand_logo" alt="logo-1" />
+          </div>
+          <p class="backed_text">
+            <img src="./images/Y-Combinator-logo.png" alt="Y-Combinator-logo" />
+            backed by Y Combinator
+          </p>
+        </div>
+
+        <!-- ===== FEATURED STUDENT ===== -->
+        <div class="featured_students">
+          <div class="student student_2"></div>
+          <img
+            src="./images/yellow-curve-line.svg"
+            class="vector_svg vector--svg-2"
+            alt="Vector"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats_wrapper">
+      <div class="container grid">
+        <div class="stats">
+          <h3>32,000+</h3>
+          <p>students</p>
+        </div>
+        <div class="stats">
+          <h3>100+</h3>
+          <p>countries</p>
+        </div>
+        <div class="stats">
+          <h3>2,000+</h3>
+          <p>success stories</p>
+        </div>
+        <div class="stats">
+          <h3>60k+</h3>
+          <p>community members</p>
+        </div>
+      </div>
+    </section>
+    <!-- ===== GSAP CDN ===== -->
+
+    <!-- ===== SCRIPT.JS ===== -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
